@@ -1,0 +1,290 @@
+<!-- ================================
+POKEMON BODY
+================================  -->
+
+<div class="body-pokemon"> 
+
+  <div class="card" [ngClass] = "{'bg-success': pokemon.types[0].type.name == 'grass',
+  'bg-danger': pokemon.types[0].type.name == 'fire',
+  'bg-primary': pokemon.types[0].type.name == 'water',
+  'bg-info': pokemon.types[0].type.name == 'bug',
+  'bg-secondary': pokemon.types[0].type.name == 'normal',
+  'bg-warning': pokemon.types[0].type.name == 'electric',
+  'bg-dark': pokemon.types[0].type.name == 'poison',
+  'bg-ground-mine': pokemon.types[0].type.name == 'ground' }">
+
+    <div class="card-header">
+      <h1 class="text-title-mine text-light"> {{ pokemon.name}}</h1>
+    </div>
+
+    <div class="card-body">      
+      <div class="row">
+  
+        <div class="col-6">
+          <a href="" class="btn  btn-pokemon" data-toggle="modal" data-target="#exampleModal"
+          [ngClass] = "{'btn-success': pokemon.types[0].type.name == 'grass',
+          'btn-danger': pokemon.types[0].type.name == 'fire',
+          'btn-primary': pokemon.types[0].type.name == 'water',
+          'btn-info': pokemon.types[0].type.name == 'bug',
+          'btn-secondary': pokemon.types[0].type.name == 'normal',
+          'btn-warning': pokemon.types[0].type.name == 'electric',
+          'btn-dark': pokemon.types[0].type.name == 'poison'}"
+          (click)="nombrePokemon=pokemon.name">{{ pokemon.types[0].type.name }} </a>
+
+          
+          <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+          <!--<a href="#" class="btn  btn-pokemon" data-toggle="modal" data-target="#exampleModal"> {{ pokemon.types[0].type.name }} </a> -->
+        </div>
+
+        <div class="col-6">
+          <!--<img src="..." class="card-img-top" alt="...">-->
+          <img [src]="pokemon.sprites.front_default" class="card-img-bottom card-pokemon-img" alt="{{ pokemon.name }}">
+        </div>
+
+      </div>
+
+      <!-- ================================
+      POKEMON MODAL
+      ================================  -->
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header listas">
+              
+              <ul>
+                <li>
+                  <img [src]="pokemon.sprites.front_default" class="modal-pokemon-img" alt="{{ pokemon.name }}">
+                </li>
+                <li>
+                  <h1 class="modal-title" id="exampleModalLabel"> {{ pokemon.name  }} </h1>
+                </li>
+              </ul>
+
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body tablas">
+              
+              <!-- ===== ACCORDION ====== -->
+              <div class="accordion" id="accordionExample">
+                <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        General data
+                      </button>
+                    </h2>
+                  </div>
+
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                      <!-- ===== TABLE ====== -->
+                      <table>
+                        <tr [ngClass] = "{'bg-success': pokemon.types[0].type.name == 'grass',
+                        'bg-danger': pokemon.types[0].type.name == 'fire',
+                        'bg-primary': pokemon.types[0].type.name == 'water',
+                        'bg-info': pokemon.types[0].type.name == 'bug',
+                        'bg-secondary': pokemon.types[0].type.name == 'normal',
+                        'bg-warning': pokemon.types[0].type.name == 'electric',
+                        'bg-dark': pokemon.types[0].type.name == 'poison'}">
+                          <th>Field</th>
+                          <th>Value</th>
+                        </tr>
+        
+                        <tr>
+                          <td>Height:</td>
+                          <td>{{ pokemon.height}}</td>
+                        </tr>
+        
+                        <tr>
+                          <td>Weight:</td>
+                          <td>{{ pokemon.weight}}</td>
+                        </tr>
+        
+                        <tr>
+                          <td>Ability:</td>
+                          <td>{{ pokemon.abilities[0].ability.name }}</td>
+                        </tr>
+                      </table> <!-- ===== END TABLE ====== -->
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Statistics
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                      <!-- ===== TABLE ====== -->
+                      <table>
+                        <tr [ngClass] = "{'bg-success': pokemon.types[0].type.name == 'grass',
+                        'bg-danger': pokemon.types[0].type.name == 'fire',
+                        'bg-primary': pokemon.types[0].type.name == 'water',
+                        'bg-info': pokemon.types[0].type.name == 'bug',
+                        'bg-secondary': pokemon.types[0].type.name == 'normal',
+                        'bg-warning': pokemon.types[0].type.name == 'electric',
+                        'bg-dark': pokemon.types[0].type.name == 'poison'}">
+                          <th>Field</th>
+                          <th>Type</th>
+                          <th>Value</th>
+                        </tr>
+        
+                        <tr>
+                          <td>Base statistic:</td>
+                          <td>{{ pokemon.stats[1].stat.name}}</td>
+                          <td>{{ pokemon.stats[1].base_stat}}</td>
+                        </tr>
+
+                        <tr>
+                          <td>Base statistic:</td>
+                          <td>{{ pokemon.stats[2].stat.name}}</td>
+                          <td>{{ pokemon.stats[2].base_stat}}</td>
+                        </tr>
+
+                        <tr>
+                          <td>Base statistic:</td>
+                          <td>{{ pokemon.stats[3].stat.name}}</td>
+                          <td>{{ pokemon.stats[3].base_stat}}</td>
+                        </tr>
+
+                        
+                        <tr>
+                          <td>Base statistic:</td>
+                          <td>{{ pokemon.stats[4].stat.name}}</td>
+                          <td>{{ pokemon.stats[4].base_stat}}</td>
+                        </tr>
+
+                        <tr>
+                          <td>Base statistic:</td>
+                          <td>{{ pokemon.stats[5].stat.name}}</td>
+                          <td>{{ pokemon.stats[5].base_stat}}</td>
+                        </tr>
+        
+                      </table> <!-- ===== END TABLE ====== -->
+                    </div>
+                  </div>
+                </div>
+
+              </div><!-- ===== END ACCORDION ====== -->
+
+            </div>
+            <div class="modal-footer">
+
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+              
+            </div>
+          </div>
+        </div>
+        
+      </div> <!-- ====== END MODAL ====== -->
+
+    </div> <!-- END CARD BODY-->
+
+  </div> <!-- ====== END CARD ====== -->
+
+
+</div> <!-- ====== END POKEMON BODY ====== -->
+
+
+<!--
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+
+<!--
+
+  
+  <div class="card">
+
+    <div class="card-body ">
+        
+      <h1 class="text-title-mine"> {{ pokemon.name}}</h1>
+        
+      <button type="button" class="btn btn-success btn-mine" data-toggle="modal" data-target="#exampleModal">
+          <h2>{{ pokemon.height}}</h2>   
+      </button>
+  
+      <button type="button" class="btn btn-success btn-mine" data-toggle="modal" data-target="#exampleModal">
+        <h2>{{ pokemon.id}} </h2>   
+      </button>
+      <h3 class="card-title"></h3>
+      <img [src]="pokemon.sprites.front_default" class="card-img-top" alt="{{ pokemon.name }}">
+  
+    </div>
+  
+  </div>    
+
+-->
+
+
+<!-- 
+    <div class="card cardPokemon">
+    <div class="card-body ">
+        <h2 class="card-title">{{ pokemon.name }}</h2>
+        <p class="card-text">ID: {{ pokemon.id }}</p>
+        <p class="card-text">Height: {{ pokemon.height }}</p>
+        <p class="card-text">Weight: {{ pokemon.weight }}</p>
+        <img [src]="pokemon.sprites.front_default" class="card-img-top" alt="{{ pokemon.name }}">
+    </div>
+</div>    
+-->
+
+<!--
+
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+-->
+

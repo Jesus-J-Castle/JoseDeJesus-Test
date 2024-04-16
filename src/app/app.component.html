@@ -1,0 +1,21 @@
+<div class="container">
+
+  <app-cabecera>
+
+  </app-cabecera>
+
+  <div class="row">
+
+    <div class="col-lg-4 col-md-6 col-sm-12" style="width: 100%;" *ngFor="let pokemon of pokemonList">
+      <app-pokemon-card [pokemon]="pokemon"></app-pokemon-card>
+    </div>
+
+  </div>
+
+  <app-footer>
+    
+  </app-footer>
+
+
+</div>
+

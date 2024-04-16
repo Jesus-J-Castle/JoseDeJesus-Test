@@ -1,0 +1,131 @@
+/* =============================
+ESTILOS POKEMON
+============================= */
+
+.body-pokemon{
+    width: 100%;
+    margin-top: 10px;
+}
+
+.body-pokemon .card img {
+    width: 120px;
+    height: auto;
+}
+
+.body-pokemon  .card-pokemon-img {
+    
+    width: 220px;
+    border-radius: 60px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("images/Pokeball4.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #fff;
+}
+
+.body-pokemon  h1 {
+    text-transform: uppercase;
+}
+
+
+.body-pokemon .btn-pokemon {
+    width: auto;
+    min-width: 140px;
+    margin: 5px 0px 5px 0px;
+    border-color: #ddd;
+    border-style: solid;
+
+}
+
+/* =============================
+MODAL // ESTILOS POKEMON
+============================= */
+
+/* === TABLAS ===*/
+
+.body-pokemon .tablas table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.body-pokemon .tablas table tr:nth-child(even) {
+    background-color:   #ddd;
+}
+
+.body-pokemon  .tablas table th {
+    text-align: left;
+    padding: 8px;
+}
+
+.body-pokemon .tablas table td{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+/* ===== LISTAS ===== */
+
+.body-pokemon .modal .listas {
+    width: 100%;
+    justify-content: center;
+}
+
+.body-pokemon .modal .listas ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+.body-pokemon .modal li {
+    
+    padding: 5px 10px 0px 140px;
+}
+
+.body-pokemon .modal img {
+    width: 180px;
+    height: auto;
+}
+
+.body-pokemon .modal-pokemon-img {
+    
+    width: 330px;
+    border-radius: 90px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("images/Pokeball4.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #fff;
+}
+
+.body-pokemon .bg-ground-mine {
+    background-color: #A04000 ;
+}
+
+.body-pokemon .bg-ground-mine .btn {
+    color: #ddd;
+}
+
+
+
+/*
+    .cardPokemon {
+        padding-bottom: 20px;
+    }
+
+
+    .cardPokemon{
+        margin-bottom: 30px;
+        border-radius: 5px;
+        border-style: solid;
+        border-color: #95A5A6;
+    }
+
+
+    .btn-mine{
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 5px;
+    }
+
+
+    .text-title-mine {
+        width: 100%;
+        text-align: center;
+    }
+*/
